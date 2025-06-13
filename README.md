@@ -1,6 +1,17 @@
 # App
 
-A starting point to help you set up your project quickly and use the common components provided by `react-native-reusables`. The idea is to make it easier for you to get started.
+A simple react native app
+
+## Screens
+
+![alt text](https://raw.githubusercontent.com/udelblue/my-app-native/refs/heads/master/images/1000003139.png "Landing")
+
+![alt text](https://raw.githubusercontent.com/udelblue/my-app-native/refs/heads/master/images/1000003140.png "Linkedin")
+
+![alt text](https://raw.githubusercontent.com/udelblue/my-app-native/refs/heads/master/images/1000003141.png "Github")
+
+![alt text](https://raw.githubusercontent.com/udelblue/my-app-native/refs/heads/master/images/1000003142.png "Certs")
+
 
 ## Features
 
