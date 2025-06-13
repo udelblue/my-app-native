@@ -15,8 +15,7 @@ import {
 import { Progress } from '~/components/ui/progress';
 import { Text } from '~/components/ui/text';
 import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/tooltip';
-import { Link, Stack } from 'expo-router';
-
+import { Separator } from '~/components/ui/separator';
 
 const GITHUB_AVATAR_URI =
   'https://avatars.githubusercontent.com/u/827775?s=400&u=5415ac9191d2e3fbeb2c432132e27afded009464&v=4';
@@ -53,30 +52,31 @@ export default function Screen() {
         </CardHeader>
         <CardContent>
           <View className='flex-row justify-around gap-3'>
-      
+            <View className='items-center'>
+                <Text
+                className='text-sm text-sky-700 underline'
+                onPress={() => {
+                  // Open the GitHub profile in a browser
+                  import('react-native').then(({ Linking }) =>
+                  Linking.openURL('https://www.linkedin.com/in/christopher-sommers-58a69a12/')
+                  );
+                }}
+                >
+                Linkedin Profile
+                </Text>
+              
+            </View>
             
           </View>
         </CardContent>
-        <CardFooter className='flex-row justify-between items-center gap-3'>
-       
-      
 
-                 <Link href='/linkedin' >
-                          <Text>Linkedin</Text>
-                        </Link>
-
- <Link href='/github' >
-                          <Text>Github</Text>
-                        </Link>
+        <CardFooter className='flex-col gap-3 pb-0'>
 
 
-
- <Link href='/certifications' >
-                          <Text>Certifications</Text>
-                        </Link>
-
-
+          <View />
+        
         </CardFooter>
+
       </Card>
     </View>
   );

@@ -11,6 +11,9 @@ import { PortalHost } from '@rn-primitives/portal';
 import { ThemeToggle } from '~/components/ThemeToggle';
 import { setAndroidNavigationBar } from '~/lib/android-navigation-bar';
 
+
+
+
 const LIGHT_THEME: Theme = {
   ...DefaultTheme,
   colors: NAV_THEME.light,
@@ -42,11 +45,14 @@ export default function RootLayout() {
         <Stack.Screen
           name='index'
           options={{
-            title: 'Starter Base',
+            title: 'Portfolio App',
             headerRight: () => <ThemeToggle />,
           }}
         />
       </Stack>
+     
+
+
       <PortalHost />
     </ThemeProvider>
   );

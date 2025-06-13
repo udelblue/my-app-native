@@ -15,8 +15,6 @@ import {
 import { Progress } from '~/components/ui/progress';
 import { Text } from '~/components/ui/text';
 import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/tooltip';
-import { Link, Stack } from 'expo-router';
-
 
 const GITHUB_AVATAR_URI =
   'https://avatars.githubusercontent.com/u/827775?s=400&u=5415ac9191d2e3fbeb2c432132e27afded009464&v=4';
@@ -53,30 +51,50 @@ export default function Screen() {
         </CardHeader>
         <CardContent>
           <View className='flex-row justify-around gap-3'>
-      
+            <View className='items-center'>
+                <Text
+                className='text-sm text-sky-700 underline'
+                onPress={() => {
+                  // Open the GitHub profile in a browser
+                  import('react-native').then(({ Linking }) =>
+                  Linking.openURL('https://github.com/udelblue')
+                  );
+                }}
+                >
+                Github Profile
+                </Text>
+              
+            </View>
             
           </View>
         </CardContent>
-        <CardFooter className='flex-row justify-between items-center gap-3'>
-       
-      
 
-                 <Link href='/linkedin' >
-                          <Text>Linkedin</Text>
-                        </Link>
-
- <Link href='/github' >
-                          <Text>Github</Text>
-                        </Link>
-
-
-
- <Link href='/certifications' >
-                          <Text>Certifications</Text>
-                        </Link>
-
-
+{/*
+        <CardFooter className='flex-col gap-3 pb-0'>
+          <View className='flex-row items-center overflow-hidden'>
+            <Text className='text-sm text-muted-foreground'>Productivity:</Text>
+            <LayoutAnimationConfig skipEntering>
+              <Animated.View
+                key={progress}
+                entering={FadeInUp}
+                exiting={FadeOutDown}
+                className='w-11 items-center'
+              >
+                <Text className='text-sm font-bold text-sky-600'>{progress}%</Text>
+              </Animated.View>
+            </LayoutAnimationConfig>
+          </View>
+          <Progress value={progress} className='h-2' indicatorClassName='bg-sky-600' />
+          <View />
+          <Button
+            variant='outline'
+            className='shadow shadow-foreground/5'
+            onPress={updateProgressValue}
+          >
+            <Text>Update</Text>
+          </Button>
         </CardFooter>
+*/}
       </Card>
     </View>
   );
